@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Blog Site</title>
+        <link rel="stylesheet" href="styles/style.css" >
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="navbar__content">
+                <div class="navbar__brand">
+                    <b>Blog</b>
+                </div>
+                <ul class="navbar__navigation">
+                    <li class="navbar__navigation_item"><a href="#" class="navbar__navigation_link">Recent</a></li>
+                    <li class="navbar__navigation_item"><a href="#" class="navbar__navigation_link">Calendar</a></li>
+                </ul>
+            </div>
+        </header>
+        <main class="main">
+            <section>
+                <h1>Add new entry</h1>
+                <form class="form" action="/entry" method="POST">
+                    <p class="form__area">
+                        <textarea class="form__textarea" name="content" id="entry-field" aria-label="Enter new content" placeholder="Enter data for article"></textarea>
+                    </p>
+                    <button class="form__button_submit" type="submit">Submit</button>
+                </form>
+            </section>
+            <section>
+                <h1>Recent posts</h1>
+                <article class="article__content">
+                    <div>
+                        <h2 class="article__title">Article number 1 •</h2>
+                        <time class="article__publishdate" datetime="20-04-2023">April 20</time>
+                    </div>
+                    <p class="article__main_body">Some Data</p>
+                </article>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__content">
+                <section class="left">
+                    <a class="footer__item" href="#">Made by Ankita Sharma</a>
+                    <a class="footer__item" href="#">Check out my other projects</a>
+                </section>
+                <section class="right">
+                    <div class="footer__right_column">
+                        <a class="footer__right_column_item" href="#">Recent</a>
+                        <a class="footer__right_column_item" href="#">Calendar</a>
+                    </div>
+                    <div class="footer__right_column">
+                        <a class="footer__right_column_item" href="#">About</a>
+                        <a class="footer__right_column_item" href="#">How this was made</a>
+                    </div>
+                </section>
+            </div>
+        </footer>
+    </body>
+</html>
