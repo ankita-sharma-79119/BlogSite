@@ -26,7 +26,8 @@ def create_app():
             entry = Blog_Entry(entry_content[:30],
                             entry_content, 
                             formatted_date.strftime("%Y-%m-%d"), 
-                            formatted_date.strftime("%b %d")
+                            formatted_date.strftime("%b %d"),
+                            datetime.datetime.now()
                             )
             entries.append(entry)
             app.db.entries.insert_one(entry.db_insert_entry())
