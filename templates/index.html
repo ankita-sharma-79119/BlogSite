@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Blog Site</title>
-        <link rel="stylesheet" href="styles/style.css" >
+        <link rel="stylesheet" href="static/css/style.css" >
     </head>
     <body>
         <header class="navbar">
@@ -21,7 +21,7 @@
         <main class="main">
             <section>
                 <h1>Add new entry</h1>
-                <form class="form" action="/entry" method="POST">
+                <form class="form" action="/" method="POST">
                     <p class="form__area">
                         <textarea class="form__textarea" name="content" id="entry-field" aria-label="Enter new content" placeholder="Enter data for article"></textarea>
                     </p>
@@ -30,13 +30,15 @@
             </section>
             <section>
                 <h1>Recent posts</h1>
+                {% for entry in entries: %}
                 <article class="article__content">
                     <div>
-                        <h2 class="article__title">Article number 1 •</h2>
-                        <time class="article__publishdate" datetime="20-04-2023">April 20</time>
+                        <h2 class="article__title">{{ entry.get_content() | truncate(30, true) }} •</h2>
+                        <time class="article__publishdate" datetime="{{ entry.get_publishdate() }}">{{ entry.get_formatted_publishdate() }}</time>
                     </div>
-                    <p class="article__main_body">Some Data</p>
+                    <p class="article__main_body">{{ entry.get_content() }}</p>
                 </article>
+                {% endfor %}
             </section>
         </main>
         <footer class="footer">

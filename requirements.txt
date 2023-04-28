@@ -1,3 +1,4 @@
 flask==2.3.1
 pymongo[srv]==4.3.3
 python-dotenv==1.0.0
+gunicorn
