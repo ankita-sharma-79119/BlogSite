@@ -14,16 +14,24 @@ def create_app():
 
     entries = []
 
-    @app.route("/", methods=["GET", "POST"])
-    def main_page():
-        if len(entries) == 0:
+    @app.template_filter("update_article_list")
+    def update_article_list():
+        article_count = app.db.entries.count_documents({})
+        print(article_count)
+        if article_count != len(entries):
             for en in app.db.entries.find({}):
                 entries.append(Blog_Entry.db_map_entry(en))
+            return True
+        else:
+            return False
 
+    @app.route("/", methods=["GET", "POST"])
+    def main_page():
         if request.method == "POST":
+            entry_title = request.form.get("title")
             entry_content = request.form.get("content")
             formatted_date = datetime.datetime.today()
-            entry = Blog_Entry(entry_content[:30],
+            entry = Blog_Entry(entry_title,
                             entry_content, 
                             formatted_date.strftime("%Y-%m-%d"), 
                             formatted_date.strftime("%b %d"),

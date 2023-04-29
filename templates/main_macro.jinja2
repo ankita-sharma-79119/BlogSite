@@ -1,0 +1,14 @@
+{% macro display_articles(entries) %}
+    {% for entry in entries[0:2]: %}
+        <article class="article__content">
+            <div>
+                <h2 class="article__title">{{ entry.get_title() }} •</h2>
+                <time class="article__publishdate" datetime="{{ entry.get_publishdate() }}">{{ entry.get_formatted_publishdate() }}</time>
+            </div>
+            <p class="article__main_body">{{ entry.get_content() | truncate(100, true)}}</p>
+        </article>
+    {% else %}
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;No recent posts</h3>
+        <br><br>
+    {% endfor %}
+{% endmacro %}
