@@ -14,16 +14,18 @@ def create_app():
 
     entries = []
 
-    @app.template_filter("update_article_list")
-    def update_article_list():
-        article_count = app.db.entries.count_documents({})
-        print(article_count)
-        if article_count != len(entries):
-            for en in app.db.entries.find({}):
-                entries.append(Blog_Entry.db_map_entry(en))
-            return True
-        else:
-            return False
+    @app.context_processor
+    def add_update_list_method():
+        def update_article_list():
+            article_count = app.db.entries.count_documents({})
+            print(article_count)
+            if article_count != len(entries):
+                for en in app.db.entries.find({}):
+                    entries.append(Blog_Entry.db_map_entry(en))
+                return True
+            else:
+                return False
+        return {"update_article_list" : update_article_list}
 
     @app.route("/", methods=["GET", "POST"])
     def main_page():
