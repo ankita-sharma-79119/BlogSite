@@ -14,7 +14,6 @@ def create_app():
 
     entries = []
 
-    @app.template_filter("update_article_list")
     def update_article_list():
         article_count = app.db.entries.count_documents({})
         print(article_count)
@@ -25,6 +24,8 @@ def create_app():
         else:
             return False
 
+    app.add_template_filter("update_article_list")
+    
     @app.route("/", methods=["GET", "POST"])
     def main_page():
         if request.method == "POST":
