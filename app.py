@@ -26,7 +26,7 @@ def create_app():
             else:
                 return False
         return {"update_article_list" : update_article_list}
-
+    
     @app.route("/", methods=["GET", "POST"])
     def main_page():
         if request.method == "POST":
