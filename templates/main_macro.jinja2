@@ -1,12 +1,22 @@
 {% macro display_articles(entries) %}
-    {% for entry in entries[0:2]: %}
-        <article class="article__content">
-            <div>
-                <h2 class="article__title">{{ entry.get_title() }} •</h2>
-                <time class="article__publishdate" datetime="{{ entry.get_publishdate() }}">{{ entry.get_formatted_publishdate() }}</time>
-            </div>
-            <p class="article__main_body">{{ entry.get_content() | truncate(100, true)}}</p>
-        </article>
+    {% for entry in entries[0:6]: %}
+        <section class="article__section">
+            <article class="article__content">
+                <div>
+                    <h2 class="article__title">{{ entry.get_title() }}</h2>
+                    <span class="article__author">by {{ entry.get_author() }}  &#x2022;</span>
+                    <time class="article__publishdate" datetime="{{ entry.get_publisheddate() }}">
+                        {{ entry.get_formatteddate() }}
+                    </time>
+                </div>
+                <div class="article__content_body">
+                    {% set image_link = 'img/' + entry.get_image() %}
+                    <img class="article__image" src="{{ url_for('static', filename=image_link) }}" 
+                    alt="{{ entry.get_image_alt() }}" width=200px height=150px/>
+                    <p class="article__main_body">{{ entry.get_content() | truncate(200, true)}}</p>
+                </div>
+            </article>
+        </section>
     {% else %}
         <h3>&nbsp;&nbsp;&nbsp;&nbsp;No recent posts</h3>
         <br><br>

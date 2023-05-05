@@ -1,0 +1,44 @@
+/* Header Stylings */
+
+.navbar{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.navbar__content {
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+}
+
+.navbar__brand{
+    display: flex;
+    align-items: center;
+    font-family: 'Bruno Ace SC', cursive;
+    font-size: 30px;
+}
+
+.navbar__brand_logo{
+    margin-right: 10px;
+}
+
+.navbar__navigation{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar__navigation_item{
+    margin-left: 40px;
+}
+
+.navbar__navigation_link{
+    font-family: 'Nanum Gothic', sans-serif;
+    text-decoration: none;
+    color: #3d3d3d;
+}

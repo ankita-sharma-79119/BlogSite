@@ -1,0 +1,14 @@
+{% from "main_macro.jinja2" import display_articles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% include "head.html" %}
+    <body>
+        {% include "header.html" %}
+        <div class="content__body">
+            {% block content %}
+            {% endblock %}
+            <!-- {% include "footer.html" %} -->
+        </div>
+    </body>
+</html>
