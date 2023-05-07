@@ -1,5 +1,5 @@
 body{
-    font-family: sans-serif;
+    font-family: Work Sans, sans-serif;
     margin: 0px;
 }
 
@@ -9,7 +9,7 @@ body{
     background-size: cover;
     margin-top: 20px;
     padding-top: 1px;
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
 }
 
 *, *::after, *::before{

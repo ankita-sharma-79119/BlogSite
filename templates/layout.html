@@ -2,13 +2,31 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    {% include "head.html" %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+        <!--load static style file-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main_content.css') }}" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}" >
+    
+        <!-- load google stylings-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Lato:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    
+        <title>TèchWired</title>
+    </head>
     <body>
         {% include "header.html" %}
         <div class="content__body">
             {% block content %}
             {% endblock %}
-            <!-- {% include "footer.html" %} -->
+            {% include "footer.html" %}
         </div>
     </body>
 </html>

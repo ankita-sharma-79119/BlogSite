@@ -10,6 +10,9 @@ load_dotenv()
 def create_app():
     app = Flask(__name__)
     client = MongoClient(os.getenv("MONGODB_URI"))
+    LinkedIn = os.getenv("LINKEDIN_URI")
+    github = os.getenv("GITHUB_URI")
+    medium = os.getenv("MEDIUM_URI")
     app.db = client.blog_site
 
     entries = []
@@ -38,10 +41,13 @@ def create_app():
                             )
             entries.append(entry)
             app.db.entries.insert_one(entry.db_insert_entry())
-        return render_template("index.html", entries=entries)
+        return render_template("homepage.html", entries=entries, 
+                                LinkedIn = LinkedIn, 
+                                github=github, 
+                                medium=medium)
     
     @app.route("/add", methods=["GET", "POST"])
-    def article_page():
+    def add_article_page():
         if request.method == "POST":
             entry_title = request.form.get("title")
             entry_author = request.form.get("author")
@@ -59,6 +65,25 @@ def create_app():
                             )
             entries.append(entry)
             app.db.entries.insert_one(entry.db_insert_entry())
-        return render_template("add_article.html", entries=entries)
+        return render_template("add_article.html", entries=entries, 
+                               LinkedIn=LinkedIn, github=github, 
+                               medium=medium)
     
+    @app.route("/about", methods=["GET"])
+    def aboutme():
+        return render_template("about.html", 
+                               LinkedIn=LinkedIn, 
+                               github=github, 
+                               medium=medium)
+
+
+    @app.route("/blog", methods=["GET", "POST"])
+    def blog():
+        if request.method == "POST":
+            pass
+        return render_template("blog.html", entries=entries,
+                               LinkedIn=LinkedIn, 
+                               github=github, 
+                               medium=medium)
+
     return app
