@@ -22,7 +22,7 @@ class Blog_Entry:
         return self.__title
     def get_author(self) -> str:
         return self.__author
-    def get_publisheddate(self) -> str:
+    def get_publisheddate(self) -> datetime:
         return self.__published_date
     def get_formatteddate(self) -> str:
         return self.__formatted_date
@@ -45,7 +45,7 @@ class Blog_Entry:
     
     @staticmethod
     def db_map_entry(entry_json):
-        pub_date = datetime.datetime.strptime(entry_json.get("published_date"), "%Y-%m-%d").date()
+        pub_date = entry_json.get("published_date").date()
         formatted_date = pub_date.strftime("%b %d")
 
         return Blog_Entry(

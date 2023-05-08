@@ -11,14 +11,13 @@
                 </div>
                 <div class="article__content_body">
                     {% set image_link = 'img/' + entry.get_image() %}
-                    <img class="article__image" src="{{ url_for('static', filename=image_link) }}" 
+                    <img class="article__image" src="{{ entry.get_image() }}" crossorigin
                     alt="{{ entry.get_image_alt() }}" width=200px height=150px/>
                     <p class="article__main_body">{{ entry.get_content() | truncate(200, true)}}</p>
                 </div>
             </article>
         </section>
     {% else %}
-        <h3>&nbsp;&nbsp;&nbsp;&nbsp;No recent posts</h3>
-        <br><br>
+        <h3 class="no_article_text">No recent posts</h3>
     {% endfor %}
 {% endmacro %}

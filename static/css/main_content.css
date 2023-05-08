@@ -1,10 +1,13 @@
 /* Main Content Stylings */
 
 .main__content{
+    /* height: 450px; */
     max-width: 950px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 0 20px;
 }
+
+/* Welcome text Styling */
 
 .welcome_div{
     max-width: 600px;
@@ -16,6 +19,8 @@
     letter-spacing: 2px;
     text-align: center;
 }
+
+/* Add Blog Styling */
 
 .form{
     display: flex;
@@ -34,7 +39,7 @@
     font-size: 15px;
     padding: 12px 20px;
     border: none;
-    background-color: rgb(249, 244, 244);
+    background-color: rgb(207, 206, 206);;
     margin-bottom: 10px;
     height: 50px;
     resize: none;
@@ -46,15 +51,28 @@
     font-size: 15px;
     padding: 12px 20px;
     border: none;
-    background-color: rgb(249, 244, 244);
+    background-color: rgb(207, 206, 206);
     margin-bottom: 10px;
-    height: 150px;
+    height: 300px;
     resize: none;
     border-radius: 10px;
 }
 
-.form__button_submit{
-    background-color: #00B4D7;
+.form__text{
+    width: 195px;
+    font-size: 15px;
+    padding: 12px 20px;
+    border: none;
+    background-color: rgb(207, 206, 206);;
+    margin-bottom: 10px;
+    height: 50px;
+    resize: none;
+    border-radius: 10px;
+}
+
+.form__button_submit, .filter_submit, .add_article_submit{
+    background-color: #34568B;
+    margin-left: 5px;
     border: none;
     font-size: 13px;
     font-weight: bold;
@@ -63,10 +81,34 @@
     color: rgb(238, 236, 236);
     cursor: pointer;
 }
-
-.form__button_submit:hover{
+.form__button_submit:hover, .filter_submit:hover, .add_article_submit:hover{
     background-color: #bebebb;
 }
+
+/* Filter Articles Styling */
+
+.date_filter_section, .date_filter_form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 50px;
+}
+
+.fitler_text{
+    font-size: 18px;
+    margin: auto 20px;
+}
+
+.date_filter_div{
+    margin-top: 2px;
+}
+
+.date_filter_start, .date_filter_end{
+    font-size: 17px;
+    color: #34568B;
+}
+
+/* Display Articles Styling */
 
 .article__section{
     border: black;
@@ -105,4 +147,10 @@
     font-size: 16px;
     line-height: 150%;
     margin-left: 15px;
+}
+
+.no_article_text{
+    margin-left: 30px;
+    margin-top: 30px;
+    height: 280px;
 }

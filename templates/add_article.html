@@ -5,10 +5,13 @@
         <div class="main__content">
             <section class="main__content_section">
                 <h1 class="main__content_title">Add new entry</h1>
-                <form class="form" action="/" method="POST">
+                <form class="form" action="/add" method="POST">
                     <p class="form__area">
                         <textarea class="form__title_textarea" name="title" id="entry-field" aria-label="Enter title" placeholder="Enter title for article" maxlength="130"></textarea>
-                        <textarea class="form__textarea" name="content" id="entry-field" aria-label="Enter new content" placeholder="Enter data for article" maxlength="500"></textarea>
+                        <input type="text" class="form__text" name="author" id="entry-field" placeholder="Enter Author" maxlength="100"/>
+                        <input type="text" class="form__text" name="image_link" id="entry-field" placeholder="Enter Image Link" maxlength="150"/>
+                        <input type="text" class="form__text" name="image_alt" id="entry-field" placeholder="Enter Image Credits" maxlength="200" />
+                        <textarea class="form__textarea" name="content" id="entry-field" aria-label="Enter new content" placeholder="Enter data for article"></textarea>
                     </p>
                     <button class="form__button_submit" type="submit">Submit</button>
                 </form>

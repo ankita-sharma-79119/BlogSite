@@ -8,19 +8,21 @@
             <div class="main__content">
                 <div class="date_filter_section">
                     <section class="date_filter">
-                        <form action="#" method="POST">
-                            <label for="date_filter_start">Start Date:</label>
-                            <input type="date" class="date_filter_start" name="filter_start" value="01-01-2023" />
-
-                            <label for="date_filter_end">End Date:</label>
-                            <input type="date" class="date_filter_end" name="filter_end" value="01-01-2023" />
+                        <form action="{{ url_for('blog') }}" method="POST" class="date_filter_form">
+                            <input type="date" class="date_filter_start" value="{{ start_date }}" name="filter_start" placeholder="01-01-2023" />
+                            <span class="fitler_text" >To</span>
+                            <input type="date" class="date_filter_end" value="{{ end_date }}" name="filter_end" placeholder="01-01-2023" />
 
                             <input type="submit" class="filter_submit" value="Submit"/>
                         </form>
                     </section>
+                    <section class="add_article_button">
+                        <form action="{{ url_for('add_article_page') }}">
+                            <input type="submit" class="add_article_submit" value="Add Article"/>
+                        </form>
+                    </section>
                 </div>
                 <section class = "articles__section">
-                    {{ update_article_list() }}
                     {{ display_articles(entries) }}
                 </section>
             </div>

@@ -49,7 +49,7 @@
 .footer__right_column_item, .footer__link_item{
     text-decoration: none;
     color: #8c8d8f;
-    margin-right: 30px
+    margin-right: 10px
 }
 
 .footer__right_column_item:hover, .footer__link_item:hover{
