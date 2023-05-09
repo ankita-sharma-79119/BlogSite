@@ -4,11 +4,12 @@ body{
 }
 
 .content__body{
-    background-image: url("../img/background.jpeg");
+    background-image: url("../img/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 20px;
     padding-top: 1px;
+    color: white;
     /* padding-bottom: 40px; */
 }
 
