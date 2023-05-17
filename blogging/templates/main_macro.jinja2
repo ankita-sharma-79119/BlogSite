@@ -1,0 +1,47 @@
+{% macro display_articles(entries) %}
+    {% for entry in entries[0:6]: %}
+        <section class="article__section">
+            <article class="article__content">
+                <a href="{{ url_for('main_route.view_article', id=entry.get_Id()) }}" class="article_view_link">
+                    <div>
+                        <h2 class="article__title">{{ entry.get_title() }}</h2>
+                        <span class="article__author">by {{ entry.get_author() }}  &#x2022;</span>
+                        <time class="article__publishdate" datetime="{{ entry.get_publisheddate() }}">
+                            {{ entry.get_formatteddate() }}
+                        </time>
+                    </div>
+                    <div class="article__content_body">
+                        {% set image_link = 'img/' + entry.get_image() %}
+                        <img class="article__image" src="{{ entry.get_image() }}" crossorigin
+                        alt="{{ entry.get_image_alt() }}" width=200px height=150px/>
+                        <p class="article__main_body">{{ entry.get_content() | truncate(200, true)}}</p>
+                    </div>
+                </a>
+            </article>
+        </section>
+    {% else %}
+        <h3 class="no_article_text">No recent posts</h3>
+    {% endfor %}
+{% endmacro %}
+
+{% macro display_one_article(entry) %}
+    <section class="view_article__section">
+        <article class="article__content">
+            <div>
+                {% set image_link = 'img/' + entry.get_image() %}
+                <img class="view_article__image" src="{{ entry.get_image() }}" crossorigin
+                alt="{{ entry.get_image_alt() }}" width=600px height=400px/>
+            </div>
+            <div class="view_article_title">
+                <h2 class="article__title">{{ entry.get_title() }}</h2>
+                <span class="article__author">by {{ entry.get_author() }}  &#x2022;</span>
+                <time class="article__publishdate" datetime="{{ entry.get_publisheddate() }}">
+                    {{ entry.get_formatteddate() }}
+                </time>
+            </div>
+            <div class="article__content_body">
+                <p class="article__main_body">{{ entry.get_content() }}</p>
+            </div>
+        </article>
+    </section>
+{% endmacro %}

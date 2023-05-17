@@ -8,7 +8,7 @@
             <div class="main__content">
                 <div class="date_filter_section">
                     <section class="date_filter">
-                        <form action="{{ url_for('blog') }}" method="POST" class="date_filter_form">
+                        <form action="{{ url_for('main_route.blog') }}" method="POST" class="date_filter_form">
                             <input type="date" class="date_filter_start" value="{{ start_date }}" name="filter_start" placeholder="01-01-2023" />
                             <span class="fitler_text" >To</span>
                             <input type="date" class="date_filter_end" value="{{ end_date }}" name="filter_end" placeholder="01-01-2023" />
@@ -17,7 +17,7 @@
                         </form>
                     </section>
                     <section class="add_article_button">
-                        <form action="{{ url_for('add_article_page') }}">
+                        <form action="{{ url_for('main_route.add_article_page') }}">
                             <input type="submit" class="add_article_submit" value="Add Article"/>
                         </form>
                     </section>

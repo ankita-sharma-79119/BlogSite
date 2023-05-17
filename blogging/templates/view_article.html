@@ -1,0 +1,10 @@
+{% from "main_macro.jinja2" import display_one_article %}
+{% extends "layout.html" %}
+
+{% block content %}
+    <main class="main">
+        <div class="main__div">
+            {{ display_one_article(entry) }}
+        </div>
+    </main>
+{% endblock %}

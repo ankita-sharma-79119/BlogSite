@@ -1,8 +1,9 @@
-from model.blog_entry import Blog_Entry
+from flask import current_app
+from blogging.model.blog_entry import Blog_Entry
 
-def update_article_list_filtered(app, start_date, end_date):
+def update_article_list_filtered(start_date, end_date):
     filtered_entries = []
-    for en in app.db.entries.find({ 'published_date': 
+    for en in current_app.db.entries.find({ 'published_date': 
                                         {'$gte': start_date, 
                                          '$lte': end_date}
                                     }):

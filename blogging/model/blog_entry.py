@@ -16,8 +16,12 @@ class Blog_Entry:
         self.__image = image
         self.__image_alt = image_alt
         self.__content = content
-        
 
+    def set_Id(self, id) -> str:
+        self.__id = id 
+
+    def get_Id(self) -> str:
+        return self.__id
     def get_title(self) -> str:
         return self.__title
     def get_author(self) -> str:
@@ -48,7 +52,7 @@ class Blog_Entry:
         pub_date = entry_json.get("published_date").date()
         formatted_date = pub_date.strftime("%b %d")
 
-        return Blog_Entry(
+        blog = Blog_Entry(
             entry_json.get("title"),
             entry_json.get("author"),
             entry_json.get("published_date"),
@@ -57,6 +61,8 @@ class Blog_Entry:
             entry_json.get("image_alt"),
             entry_json.get("content")
         )
+        blog.set_Id(entry_json.get("_id"))
+        return blog
 
     def __str__(self) -> str:
         return self.__title +" "+self.__author

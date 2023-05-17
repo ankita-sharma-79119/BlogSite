@@ -127,6 +127,11 @@
     margin-top: 20px;
 }
 
+.article__content .article_view_link{
+    text-decoration: none;
+    color: inherit;
+}
+
 .article__title{
     margin-bottom: 2px;
     margin-top: 0px;
@@ -154,4 +159,33 @@
     margin-left: 30px;
     margin-top: 30px;
     height: 280px;
+}
+
+/* View Article Stylings */
+
+.view_article__section{
+    /* border: black; */
+    border: white;
+    border-width: 1px;
+    border-radius: 10px;
+    border-style: solid;
+    margin-top: 50px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.view_article__image{
+    display: flex;
+    margin: 0 auto;
+    border-color: rgb(90, 140, 184);
+    border-style: solid;
+    border-radius: 8px;
+}
+
+.view_article_title{
+    display: flexbox;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 30px;
 }
