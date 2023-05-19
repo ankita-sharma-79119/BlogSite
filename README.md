@@ -9,6 +9,7 @@ Live Link: https://bloggingsite.onrender.com/
 - Show all posts
 - Filter posts based on Date range
 - Create new post
+- View posts
 
 # To Do
 - Delete posts
