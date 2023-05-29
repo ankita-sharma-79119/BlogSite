@@ -8,7 +8,6 @@ Live Link: https://bloggingsite.onrender.com/
 # Features
 - Show all posts
 - Filter posts based on Date range
-- Create new post
 - View posts
 
 # Usage
