@@ -17,6 +17,7 @@ entries = []
 LinkedIn = os.getenv("LINKEDIN_URI")
 github = os.getenv("GITHUB_URI")
 medium = os.getenv("MEDIUM_URI")
+portfolio = os.getenv("PORTFOLIO_URI")
 
 @main_route.context_processor
 def add_update_list_method():
@@ -46,9 +47,10 @@ def main_page():
     return render_template("homepage.html", entries=entries, 
                             LinkedIn = LinkedIn, 
                             github=github, 
-                            medium=medium)
+                            medium=medium,
+                            portfolio=portfolio)
 
-@main_route.route("/add", methods=["GET", "POST"])
+# @main_route.route("/add", methods=["GET", "POST"])
 def add_article_page():
     if request.method == "POST":
         entry_title = request.form.get("title")
@@ -78,8 +80,16 @@ def aboutme():
     return render_template("about.html", 
                         LinkedIn=LinkedIn, 
                         github=github, 
-                        medium=medium)
+                        medium=medium,
+                        portfolio=portfolio)
 
+@main_route.route("/credits", methods=["GET"])
+def credit_page():
+    return render_template("credits.html",
+                           LinkedIn=LinkedIn, 
+                           github=github, 
+                           medium=medium,
+                           portfolio=portfolio)
 
 @main_route.route("/blog", methods=["GET", "POST"])
 def blog():
@@ -96,6 +106,7 @@ def blog():
                         LinkedIn=LinkedIn, 
                         github=github, 
                         medium=medium,
+                        portfolio=portfolio,
                         start_date=start_date,
                         end_date=end_date)
 
@@ -106,4 +117,5 @@ def view_article(id):
                            entry = Blog_Entry.db_map_entry(entry[0]),
                            LinkedIn=LinkedIn, 
                            github=github, 
-                           medium=medium)
+                           medium=medium,
+                           portfolio=portfolio)
