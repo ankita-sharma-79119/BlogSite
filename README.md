@@ -11,12 +11,6 @@ Live Link: https://bloggingsite.onrender.com/
 - Create new post
 - View posts
 
-# To Do
-- Delete posts
-- User Login
-- Update posts
-- Categories
-
 # Usage
 Here's how you can use the Project:
 1. Install pyenv-win
