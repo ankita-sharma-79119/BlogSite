@@ -11,9 +11,9 @@ phases:
       - mkdir dev-env
       - cd dev-env
       - pyenv exec python -m venv venv-env
-      - ls
   build:
     commands:
+      - exec bash
       - pyenv activate venv-env
       - pip install -r requirements.txt
   post_build:
