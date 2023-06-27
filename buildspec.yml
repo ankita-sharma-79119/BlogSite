@@ -4,11 +4,13 @@ phases:
   install:
     runtime-versions:
       python: 3.11
-  build:
+  pre_build:
     commands:
       - echo Starting the build stage
       - sudo apt-get update
       - pyenv exec python -m venv .venv
+  build:
+    commands:
       - .venv/Scripts/activate
       - pip install -r requirements.txt
   post_build:
