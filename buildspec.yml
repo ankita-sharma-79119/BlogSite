@@ -8,16 +8,10 @@ phases:
     commands:
       - echo Starting the build stage
       - sudo apt-get update
-      - echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc 
-      - echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc 
-      - echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc
-      - exec bash
-      - echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-      - exec bash
-      - pyenv virtualenv 3.11 venv-name-3.11
+      - virtualenv venv-new
   build:
     commands:
-      - pyenv activate venv-name-3.11
+      - .venv-new/bin/activate
       - pip install -r requirements.txt
   post_build:
     commands:
