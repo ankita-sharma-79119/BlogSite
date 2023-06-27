@@ -8,10 +8,11 @@ phases:
     commands:
       - echo Starting the build stage
       - sudo apt-get update
-      - pyenv exec python -m venv .venv
+      - sudo apt install python3-venv
+      - python3 -m venv .venv
   build:
     commands:
-      - .venv/Scripts/activate
+      - source .venv/bin/activate
       - pip install -r requirements.txt
   post_build:
     commands:
