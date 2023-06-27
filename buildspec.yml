@@ -12,7 +12,7 @@ phases:
       - pyenv exec python -m venv .venv
       - .venv/Scripts/activate
       - pip install -r requirements.txt
-  post-build:
+  post_build:
     commands:
       - echo Build completed on `date`
 
