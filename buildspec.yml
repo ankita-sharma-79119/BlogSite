@@ -8,10 +8,10 @@ phases:
     commands:
       - echo Starting the build stage
       - sudo apt-get update
-      - virtualenv venv-new
+      - virtualenv venv_new
   build:
     commands:
-      - .venv-new/bin/activate
+      - source venv_new/bin/activate
       - pip install -r requirements.txt
   post_build:
     commands:
