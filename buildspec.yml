@@ -10,11 +10,11 @@ phases:
       - sudo apt-get update
       - mkdir dev-env
       - cd dev-env
-      - pyenv exec python -m venv .venv
+      - pyenv exec python -m venv venv-env
       - ls
   build:
     commands:
-      - .venv/Scripts/activate
+      - pyenv activate venv-env
       - pip install -r requirements.txt
   post_build:
     commands:
