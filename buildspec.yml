@@ -11,6 +11,7 @@ phases:
       - mkdir dev-env
       - cd dev-env
       - pyenv exec python -m venv .venv
+      - ls
   build:
     commands:
       - .venv/Scripts/activate
