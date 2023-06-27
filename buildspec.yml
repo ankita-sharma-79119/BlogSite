@@ -4,20 +4,11 @@ phases:
   install:
     runtime-versions:
       python: 3.11
-  pre_build:
-    commands:
-      - echo Starting the build stage
-      - sudo apt-get update
-      - virtualenv venv_new
   build:
-    commands:
-      - source venv_new/bin/activate
-      - pip install -r requirements.txt
-  post_build:
     commands:
       - echo Build completed on `date`
 
 artifacts:
   files:
-    - blogging
+    - \blogging
     - requirements.txt
