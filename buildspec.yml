@@ -8,7 +8,6 @@ phases:
     commands:
       - echo Starting the build stage
       - sudo apt-get update
-      - pip install pyenv
       - pyenv exec python -m venv .venv
       - .venv/Scripts/activate
       - pip install -r requirements.txt
