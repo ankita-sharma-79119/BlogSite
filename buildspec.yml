@@ -10,5 +10,6 @@ phases:
 
 artifacts:
   files:
-    - \blogging
+    - '**/*'
     - requirements.txt
+  base-directory: 'blogging'
