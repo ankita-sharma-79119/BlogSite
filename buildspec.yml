@@ -12,5 +12,6 @@ artifacts:
   files:
     - '**/*'
     - appspec.yml
+    - buildspec.yml
     - requirements.txt
   base-directory: 'blogging'
