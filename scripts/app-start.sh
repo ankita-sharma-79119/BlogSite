@@ -1,0 +1,1 @@
+gunicorn "blogging:create_app()"

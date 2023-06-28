@@ -1,0 +1,15 @@
+version: 0.1
+os: linux
+files:
+  - source: /
+    destination: /app
+
+hooks:
+  AfterInstall:
+    - location: scripts/install-dependencies.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/app-start.sh
+      timeout: 300
+      runas: root
