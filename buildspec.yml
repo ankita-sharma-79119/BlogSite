@@ -11,5 +11,6 @@ phases:
 artifacts:
   files:
     - '**/*'
+    - appspec.yml
     - requirements.txt
   base-directory: 'blogging'
