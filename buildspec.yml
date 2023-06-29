@@ -10,8 +10,4 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
-    - appspec.yaml
-    - buildspec.yaml
-    - requirements.txt
-  base-directory: 'blogging'
+    - '**.*'
