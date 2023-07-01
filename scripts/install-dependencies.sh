@@ -3,4 +3,4 @@ mkdir application
 cd application
 python3 -m venv app_env
 source app_env/bin/activate
-pip install -r requirements.txt
+pip3 install -r /home/ec2/scripts/requirements.txt

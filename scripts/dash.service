@@ -1,0 +1,9 @@
+[Unit]
+Description=Blogging Site
+After=multi-user.target
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/gunicorn "blogging:create_app()"
+[Install]
+WantedBy=multi-user.target
