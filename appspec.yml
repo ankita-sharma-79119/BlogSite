@@ -1,26 +1,9 @@
 version: 0.0
 os: linux
 files:
-  - source: .
+  - source: /
     destination: /home/ec2/app/
-  - source: ./scripts/dash.service
-    destination: /etc/systemd/system/
-permissions:
-  - object: /home/ec2/scripts/install_dependencies.sh
-    owner: root
-    mode: 755
-    type:
-      - file
-  - object: /home/ec2/scripts/start_dash.sh
-    owner: root
-    mode: 755
-    type:
-      - file
-  - object: /home/ec2/scripts/stop_dash.sh
-    owner: root
-    mode: 755
-    type:
-      - file
+
 hooks:
   BeforeInstall:
     - location: scripts/install-dependencies.sh
@@ -29,14 +12,8 @@ hooks:
   ApplicationStart:
     - location: scripts/app-start.sh
       timeout: 300
-      runas: rootAfterInstall:
-    - location: scripts/install_dependencies.sh
-      runas: root
-  ApplicationStart:
-    - location: scripts/start_dash.sh
-      timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/stop_dash.sh
+    - location: scripts/app-end.sh
       timeout: 300
       runas: root
