@@ -3,3 +3,13 @@ os: linux
 files:
   - source: /
     destination: /home/ec2/app
+
+hooks:
+  AfterInstall:
+    - location: scripts/install-dependencies.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/app-start.sh
+      timeout: 300
+      runas: root
