@@ -5,7 +5,7 @@ files:
     destination: /home/ec2/app
 
 hooks:
-  AfterInstall:
+  BeforeInstall:
     - location: scripts/install-dependencies.sh
       timeout: 300
       runas: root
