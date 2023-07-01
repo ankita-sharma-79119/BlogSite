@@ -1,1 +1,1 @@
-/home/ec2/app/app_env/Lib/site-packages/gunicorn "/home/ec2/app/blogging:create_app()"
+/home/ec2/app/app_env/Scripts/gunicorn "/home/ec2/app/blogging:create_app()"
