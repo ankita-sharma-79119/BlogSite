@@ -1,0 +1,14 @@
+[Unit]
+Description=Blogging Site
+After=network.target
+
+[Service]
+User=root
+Type=simple
+Restart=always
+WorkingDirectory=/home/ec2/app/
+Environment="PATH=/home/ec2/app/app_env/bin"
+
+ExecStart=/home/ec2/app/app_env/bin/gunicorn --bind 0.0.0.0:5000 -m 007 "blogging:create_app()"
+[Install]
+WantedBy=multi-user.target
