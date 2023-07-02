@@ -24,13 +24,13 @@ permissions:
 
 hooks:
   AfterInstall:
-    - location: home/ec2/app/scripts/install_dependencies.sh
+    - location: scripts/install_dependencies.sh
       runas: root
   ApplicationStart:
-    - location: home/ec2/app/scripts/start_app.sh
+    - location: scripts/start_app.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: home/ec2/app/scripts/stop_app.sh
+    - location: scripts/stop_app.sh
       timeout: 300
       runas: root
