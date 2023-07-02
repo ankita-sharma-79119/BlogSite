@@ -6,17 +6,17 @@ files:
   - source: /scripts/app.service
     destination: /etc/systemd/system/
 permissions:
-  - object: /home/ec2/scripts/install_dependencies.sh
+  - object: /home/ec2/app/scripts/install_dependencies.sh
     owner: root
     mode: 755
     type:
       - file
-  - object: /home/ec2/scripts/start_app.sh
+  - object: /home/ec2/app/scripts/start_app.sh
     owner: root
     mode: 755
     type:
       - file
-  - object: /home/ec2/scripts/stop_app.sh
+  - object: /home/ec2/app/scripts/stop_app.sh
     owner: root
     mode: 755
     type:
@@ -24,13 +24,13 @@ permissions:
 
 hooks:
   AfterInstall:
-    - location: scripts/install_dependencies.sh
+    - location: /home/ec2/app/scripts/install_dependencies.sh
       runas: root
   ApplicationStart:
-    - location: scripts/start_app.sh
+    - location: /home/ec2/app/scripts/start_app.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/stop_app.sh
+    - location: /home/ec2/app/scripts/stop_app.sh
       timeout: 300
       runas: root
