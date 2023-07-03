@@ -8,22 +8,22 @@ files:
 permissions:
   - object: home/ec2/app/
     owner: root
-    mode: 777
+    mode: 4755
     type:
-      - folder
+      - directory
   - object: scripts/install-dependencies.sh
     owner: root
-    mode: 777
+    mode: 4755
     type:
       - file
   - object: scripts/start_app.sh
     owner: root
-    mode: 777
+    mode: 4755
     type:
       - file
   - object: scripts/stop_app.sh
     owner: root
-    mode: 777
+    mode: 4755
     type:
       - file
 
