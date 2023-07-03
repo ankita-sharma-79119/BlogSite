@@ -8,8 +8,7 @@ Group=www-data
 WorkingDirectory=/home/ec2-user/app/
 Environment="PATH=/home/ec2-user/app/app_env/bin"
 
-ExecStart=cd /home/ec2-user/app
-ExecStart=source app_env/bin/activate
+ExecStartPre=source /home/ec2-user/app/app_env/bin/activate
 ExecStart=gunicorn --bind unix:app.sock -m 007 "blogging:create_app()"
 ExecStop=deactivate
 [Install]
