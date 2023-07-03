@@ -4,10 +4,10 @@ After=network.target
 
 [Service]
 User=root
-Group-www-data
+Group=www-data
 WorkingDirectory=/home/ec2-user/app/
 Environment="PATH=/home/ec2-user/app/app_env/bin"
 
-ExecStart=/home/ec2-user/app-user/app_env/bin/gunicorn --bind 0.0.0.0:5000 -m 007 "blogging:create_app()"
+ExecStart=/home/ec2-user/app-user/app_env/bin/gunicorn --bind unix:app.sock -m 007 "blogging:create_app()"
 [Install]
 WantedBy=multi-user.target

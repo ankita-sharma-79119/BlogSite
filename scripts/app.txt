@@ -1,0 +1,8 @@
+server { 
+ listen 80; 
+ server_name 172.31.12.224; 
+ 
+ location / { 
+ proxy_pass http://unix:/home/ec2-user/app/app.sock; 
+ } 
+}
