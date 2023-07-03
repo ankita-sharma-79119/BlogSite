@@ -2,11 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2/app/
+    destination: /home/ec2-user/app/
   - source: /scripts/app.service
     destination: /etc/systemd/system/
 permissions:
-  - object: home/ec2/app/
+  - object: home/ec2-user/app/
     owner: root
     mode: 4755
     type:
