@@ -4,8 +4,7 @@ After=network.target
 
 [Service]
 User=root
-Type=simple
-Restart=always
+Group-www-data
 WorkingDirectory=/home/ec2-user/app/
 Environment="PATH=/home/ec2-user/app/app_env/bin"
 

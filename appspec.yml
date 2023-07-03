@@ -14,12 +14,12 @@ permissions:
     mode: 4755
     type:
       - file
-  - object: scripts/app-start.sh
+  - object: scripts/start_app.sh
     owner: root
     mode: 4755
     type:
       - file
-  - object: scripts/app-end.sh
+  - object: scripts/stop_app.sh
     owner: root
     mode: 4755
     type:
@@ -30,10 +30,10 @@ hooks:
     - location: scripts/install-dependencies.sh
       runas: root
   ApplicationStart:
-    - location: scripts/app-start.sh
+    - location: scripts/start_app.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/app-end.sh
+    - location: scripts/stop_app.sh
       timeout: 300
       runas: root
