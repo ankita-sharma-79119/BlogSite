@@ -10,6 +10,7 @@ Group=www-data
 RuntimeDirectory=gunicorn
 WorkingDirectory=/home/ec2-user/app
 
+ExecStartPre=source home/ec2-user/app/app_env/bin/activate
 ExecStart=/usr/bin/gunicorn 'blogging:create_app()'
 ExecReload=/bin/kill -s HUP $MAINPID
 KillMode=mixed
