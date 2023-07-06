@@ -3,6 +3,7 @@ A python project to create and view simple blogs.
 
 In this Project, I have made a website that allows the user to add and view the blog articles. I have build it using python, flask, jinja2 for the backend and html, css for the frontend and mongodb as the database.
 
+This project has been deployed on AWS and an automated CI CD pipeline has been configure for it using the tools such AWS CodeBuild, AWS CodeDeploy, AWS CodePipeline, EC2 and S3.
 Live Link: https://bloggingsite.onrender.com/
 
 # Features
