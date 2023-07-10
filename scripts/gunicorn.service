@@ -11,7 +11,7 @@ Group=www-data
 RuntimeDirectory=gunicorn
 WorkingDirectory=/home/ec2-user/app
 
-ExecStart=/usr/bin/gunicorn 'blogging:create_app()'
+ExecStart=/usr/bin/gunicorn --bind unix:gunicorn.sock -m 007 'blogging:create_app()'
 ExecReload=/bin/kill -s HUP $MAINPID
 KillMode=mixed
 TimeoutStopSec=5
