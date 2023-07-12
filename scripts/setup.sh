@@ -8,6 +8,8 @@ pip install gunicorn
 sudo apt-get install supervisor
 
 # Configure supervisor configs
+sudo mkdir /etc/supervisor/conf.d/var/
+sudo mkdir /etc/supervisor/conf.d/var/log/
 sudo mkdir /etc/supervisor/conf.d/var/log/gunicorn
 sudo supervisorctl reread
 sudo supervisorctl update
