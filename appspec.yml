@@ -2,13 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/app/
-  - source: /scripts/gunicorn.service
-    destination: /etc/systemd/system/
-  - source: /scripts/gunicorn.socket
-    destination: /etc/systemd/system/
+    destination: /home/ec2-user/techwired/
 permissions:
-  - object: home/ec2-user/app/
+  - object: home/ec2-user/techwired/
     owner: root
     mode: 4755
     type:
@@ -18,26 +14,8 @@ permissions:
     mode: 4755
     type:
       - file
-  - object: scripts/start_app.sh
-    owner: root
-    mode: 4755
-    type:
-      - file
-  - object: scripts/stop_app.sh
-    owner: root
-    mode: 4755
-    type:
-      - file
 
 hooks:
   AfterInstall:
     - location: scripts/install-dependencies.sh
-      runas: root
-  ApplicationStart:
-    - location: scripts/start_app.sh
-      timeout: 300
-      runas: root
-  ApplicationStop:
-    - location: scripts/stop_app.sh
-      timeout: 300
       runas: root
