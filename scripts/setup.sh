@@ -1,10 +1,17 @@
+# Install CodeDeploy
+sudo apt update
+sudo apt install ruby-full
+sudo apt install wget
+cd /home/ubuntu
+wget https://aws-codedeploy-ap-south-1.s3.ap-south-1.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto > /tmp/logfile
+sudo service codedeploy-agent status
+
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install python3-venv
-python3 -m venv env
-source env/bin/activate
 sudo apt-get install -y nginx
-pip install gunicorn
 sudo apt-get install supervisor
 
 # Configure supervisor configs
