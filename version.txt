@@ -1,4 +1,4 @@
-version: 2.4
-current build date: 12/07/2023
+version: 2.5
+current build date: 13/07/2023
 last build date: 10/07/2023
 comment: build triggered for AWS Deploy
